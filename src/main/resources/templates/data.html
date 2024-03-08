@@ -32,9 +32,8 @@
               <td th:text="${p.name}" />
               <td th:text="${p.price}" />
               <td th:text="${p.quantity}" />
-              
-<td><a th:href="@{/delete?(id=${p.id})}  " onclick= " return deleteData()" class="btn btn-danger">delete</a></td>            </tbody>
-                 
+       <td><a th:href="@{/edit?(id=${p.id})}  " class="btn btn-info">edit</a>            
+              <a th:href="@{/delete?(id=${p.id})}  " onclick= " return deleteData()" class="btn btn-danger">delete</a> </td>          </tbody>
                  <tr> 
                  <td th:if="${products==null or products.isEmpty()}" colspan="5" class ="text-center">Record Not Found...</td>
                  </tr>

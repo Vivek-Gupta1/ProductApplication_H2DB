@@ -14,16 +14,20 @@
         <form th:action="@{/product}" th:object="${pr}" method="post">
             <table>
                 <tr>
+                   <input type ="hidden" th:field="*{id}"/>
                     <td>Name:</td>
                     <td><input type="text" th:field="*{name}"></td>
+                    <td><p th:if="${#fields.hasErrors('name')} " th:errors="*{name}"  class="text-danger"></p></td>    
                 </tr>
                 <tr>
                     <td>Price:</td>
                     <td><input type="text" th:field="*{price}"></td>
+                    <td><p  th:if="${#fields.hasErrors('price')} " th:errors="*{price}"  class="text-danger"></p></td>    
                 </tr>
                 <tr>
                     <td>Quantity:</td>
                     <td><input type="number" th:field="*{quantity}"></td>
+                    <td><p  th:if="${#fields.hasErrors('quantity')} " th:errors="*{quantity}"  class="text-danger"></p></td>    
                 </tr>
                 <tr>
                     <td><a href="/" class="btn btn-secondary">Reset</a></td>
